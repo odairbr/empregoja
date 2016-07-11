@@ -1,7 +1,11 @@
 <% @jobs.each do |job| %>
   <div>
     <p>
-      <h1> <%= job.title %> </h1><br>
+      <h1> <%= job.title %> </h1>
+
+      <% if job.featured? %>
+        <strong> Destaque </strong>
+      <% end %>
       <%= job.category %><br>
       <%= job.company %><br>
 

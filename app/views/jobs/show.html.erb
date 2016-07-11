@@ -1,6 +1,9 @@
 <div>
   <p>
     <h1> <%= @job.title %> </h1><br>
+    <% if @job.featured? %>
+      <strong> Destaque </strong>
+    <% end %>
     <%= @job.category %><br>
     <%= @job.company %><br>
     <%= @job.description %><br>
