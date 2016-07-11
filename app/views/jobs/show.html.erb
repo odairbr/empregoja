@@ -5,7 +5,7 @@
       <strong> Destaque </strong>
     <% end %>
     <%= @job.category %><br>
-    <%= @job.company %><br>
+    <%= @job.company.name %><br>
     <%= @job.description %><br>
     <%= @job.location %><br>
     <%= link_to 'Voltar', root_path %>
