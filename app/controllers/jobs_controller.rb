@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
-
   end
 
   def new
@@ -11,9 +10,14 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new job_params
-    @job.save
 
-    redirect_to @job
+    if @job.save
+      redirect_to @job
+    else
+      @companies = Company.all
+      render 'new'
+    end
+
   end
 
   private
