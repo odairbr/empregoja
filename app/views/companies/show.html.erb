@@ -8,6 +8,29 @@
 
     <%= link_to 'Voltar', root_path %>
 
+    <% if @company.jobs.empty? %>
+      <strong> Nenhuma vaga disponível </strong>
+    <% end %>
+
+    <%= @company.jobs.each do |job| %>
+      <div>
+        <p>
+          <h1> <%= job.title %> </h1><br>
+          <% if job.featured? %>
+            <strong> Destaque </strong>
+          <% end %>
+          <%= job.category %><br>
+          <%= job.company.name %><br>
+          <%= job.description %><br>
+          <%= job.location %><br>
+          <%= link_to 'Voltar', root_path %>
+
+
+        </p>
+      </div>
+    <% end %>
+
+
 
   </p>
 </div>
