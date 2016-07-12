@@ -1,0 +1,9 @@
+
+    <h1> <%= link_to job.title, job %> </h1>
+    <p>
+      <% if job.featured? %>
+        <strong> Destaque </strong>
+      <% end %>
+      <%= job.category %><br>
+      <%= job.company.name %><br>
+    </p>
