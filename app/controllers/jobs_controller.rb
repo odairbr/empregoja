@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
+  before_action :set_collections, only: [:new, :edit]
+  before_action :find_job, only: [:show, :edit, :update]
+
   def show
-    @job = Job.find(params[:id])
-    
   end
 
   def new
     @job = Job.new
-    @companies = Company.all
   end
 
   def create
@@ -15,31 +15,36 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else
-      @companies = Company.all
+      set_collections
       render 'new'
     end
   end
 
   def edit
-    @job = Job.find(params[:id])
-    @companies = Company.all
   end
 
   def update
-    @job = Job.find(params[:id])
-    @companies = Company.all
-
     if @job.update(job_params)
       redirect_to @job
     else
+      set_collections
       render 'edit'
     end
   end
 
   private
   def job_params
-    params.require(:job).permit(:title, :category, :company_id, :description,
+    params.require(:job).permit(:title, :category_id, :company_id, :description,
                                 :location, :featured)
+  end
+
+  def set_collections
+    @companies = Company.all
+    @categories = Category.all
+  end
+
+  def find_job
+    @job = Job.find(params[:id])
   end
 
 end

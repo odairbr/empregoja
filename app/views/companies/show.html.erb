@@ -1,22 +1,31 @@
-<div>
-  <p>
-    <h1> <%= @company.name %> </h1><br>
+<div class="row">
 
-    <%= @company.location %><br>
-    <%= @company.mail %> <br>
-    <%= @company.phone %> <br>
-
-    <%= link_to 'Voltar', root_path %>
 
     <% if @company.jobs.empty? %>
       <strong> Nenhuma vaga disponível </strong>
     <% end %>
 
-    <aside>
-      <%= render partial: 'jobs/job',
-                collection: @company.jobs %>
-    </aside>
+    <div class = "col-md-9">
+      <aside id="jobs">
+        <div class="row">
+          <% @company.jobs.each do |job| %>
+            <div class="col-md-6">
+              <%= render job %>
+            </div>
+          <%end%>
+      </aside>
+    </div>
+
+    <div class="col-md-3">
+      <h1> <%= @company.name %> </h1>
+
+      <%= @company.location %><br>
+      <%= @company.mail %> <br>
+      <%= @company.phone %> <br>
+
+      <%= link_to 'Voltar', root_path %>
+    </div>
 
 
-  </p>
+
 </div>
