@@ -1,0 +1,11 @@
+
+<% if @company.errors.any? %>
+  <%= label_error %>
+<% end %>
+
+<section>
+  <%= render partial: 'form',
+      locals: {submit_text: 'Atualizar Empresa',
+          label_error: 'Não foi possível atualizar a Empresa'} %>
+
+</section>

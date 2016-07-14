@@ -1,29 +1,7 @@
 
 <section>
   <h1> New Company </h1>
-
-  <%= form_for @company do |f| %>
-    <div>
-      <%= f.label :name, 'Nome' %>
-      <%= f.text_field :name %>
-    </div>
-
-    <div>
-      <%= f.label :location, 'Local' %>
-      <%= f.text_field :location %>
-    </div>
-
-    <div>
-      <%= f.label :mail, 'Email' %>
-      <%= f.text_field :mail %>
-    </div>
-
-    <div>
-      <%= f.label :phone, 'Telefone' %>
-      <%= f.text_field :phone %>
-    </div>
-    <div>
-      <%= f.submit 'Criar Empresa' %>
-    </div>
-  <% end %>
+  <%= render partial: 'form',
+  locals: {submit_text: 'Criar Empresa',
+          label_error: 'Não foi possível criar a Empresa'} %>
 </section>
