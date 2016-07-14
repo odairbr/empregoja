@@ -14,7 +14,12 @@
     <aside>
       <h1> Empresas </h1>
       <% @companies.each do |company| %>
-        <h1> <%= link_to company.name, company %></h1>
+        <%= link_to company.name, company %><p>
+      <% end %>
+      <br>
+      <h1> Categorias </h1>
+      <% @categories.each do |category| %>
+        <%= link_to category.name, category %><p>
       <% end %>
     </aside>
   </div>

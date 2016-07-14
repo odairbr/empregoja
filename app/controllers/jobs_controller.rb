@@ -2,6 +2,9 @@ class JobsController < ApplicationController
   before_action :set_collections, only: [:new, :edit]
   before_action :find_job, only: [:show, :edit, :update]
 
+  def index
+
+  end
   def show
   end
 

@@ -1,0 +1,15 @@
+<% if @category.errors.any? %>
+  Nome da categoria está em branco
+<% end %>
+<section>
+  <%= form_for @category do |f| %>
+    <div>
+      <%= f.label :name, 'Nome' %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.submit 'Criar Categoria' %>
+    </div>
+
+  <% end %>
+</section>

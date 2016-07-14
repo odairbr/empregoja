@@ -1,20 +1,16 @@
 <div class="row">
-  <section class="company">
+  <section class="category">
     <div class="col-md-10">
-      <h1> <%= @company.name %> </h1>
-      <%= @company.location %><br>
-      <%= @company.mail %> <br>
-      <%= @company.phone %> <br>
-      
+      <h1> <%= @category.name %> </h1>
     </div>
   </section>
   <aside id="jobs">
     <div class = "col-md-2">
       <div class="row">
-        <% if @company.jobs.empty? %>
+        <% if @category.jobs.empty? %>
           <strong> Nenhuma vaga disponível </strong>
         <% end %>
-        <% @company.jobs.each do |job| %>
+        <% @category.jobs.each do |job| %>
             <%= render job %>
         <%end%>
       </div>
