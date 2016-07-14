@@ -2,10 +2,11 @@
   <section class="company">
     <div class="col-md-10">
       <h1> <%= @company.name %> </h1>
+      <%= @company.premium? ? (image_tag 'estrela.jpg') : ''   %>
       <%= @company.location %><br>
       <%= @company.mail %> <br>
       <%= @company.phone %> <br>
-      
+
     </div>
   </section>
   <aside id="jobs">
