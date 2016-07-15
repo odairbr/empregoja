@@ -1,15 +1,18 @@
 <div>
-  <p>
-    <h1> <%= @job.title %> </h1><br>
-    <% if @job.featured? %>
-      <strong> Destaque </strong>
+    <% if @job.expired? %>
+      <%= 'Vaga Expirada' %>
     <% end %>
-    <%= @job.category.name %><br>
-    <%= @job.company.name %><br>
+    <p>
+      <h1> <%= @job.title %> </h1><br>
+      <% if @job.featured? %>
+        <strong> Destaque </strong>
+      <% end %>
+      <%= @job.category.name %><br>
+      <%= @job.company.name %><br>
 
-    <%= @job.description %><br>
-    <%= @job.location %><br>
-  
+      <%= @job.description %><br>
+      <%= @job.location %><br>
 
-  </p>
+
+    </p>
 </div>
