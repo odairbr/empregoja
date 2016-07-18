@@ -1,18 +1,19 @@
-<div>
-    <% if @job.expired? %>
-      <%= 'Vaga Expirada' %>
-    <% end %>
-    <p>
-      <h1> <%= @job.title %> </h1><br>
-      <% if @job.featured? %>
-        <strong> Destaque </strong> <br>
+<section>
+  <div>
+      <% if @job.expired? %>
+        <%= 'Vaga Expirada' %>
       <% end %>
-      <%= @job.category.name %><br>
-      <%= @job.company.name %><br>
+      <p>
+        <h1> <%= @job.title %> </h1>
+        <%= link_to  'Editar', edit_job_path %><br>
+        <% if @job.featured? %>
+          <strong> Destaque </strong> <br>
+        <% end %>
+        <%= @job.category.name %><br>
+        <%= @job.company.name %><br>
 
-      <%= @job.description %><br>
-      <%= @job.location %><br>
-
-
-    </p>
-</div>
+        <%= @job.description %><br>
+        <%= @job.location %><br>
+      </p>
+  </div>
+</section>

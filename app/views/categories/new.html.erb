@@ -2,14 +2,12 @@
   Nome da categoria está em branco
 <% end %>
 <section>
-  <%= form_for @category do |f| %>
+  <%= simple_form_for @category do |f| %>
     <div>
-      <%= f.label :name, 'Nome' %>
-      <%= f.text_field :name %>
+      <%= f.input :name, label: 'Nome' %>
     </div>
     <div>
       <%= f.submit 'Criar Categoria' %>
     </div>
-
   <% end %>
 </section>

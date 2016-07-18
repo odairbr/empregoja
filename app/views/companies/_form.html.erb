@@ -1,24 +1,22 @@
 <% if @company.errors.any? %>
   <%= label_error %>
 <% end %>
-<%= form_for @company do |f| %>
-  <div>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
+<section>
+<%= simple_form_for @company do |f| %>
+  <div class="form-group">
+    <%= f.input :name, label: 'Nome', class: "form-control",  autofocus: true %>
   </div>
-  <div>
-    <%= f.label :location, 'Local' %>
-    <%= f.text_field :location %>
+  <div class="form-group">
+    <%= f.input :location, label: 'Local'%>
   </div>
-  <div>
-    <%= f.label :mail, 'Email' %>
-    <%= f.text_field :mail %>
+  <div class="form-group">
+    <%= f.input :mail, label: 'Email' %>
   </div>
-  <div>
-    <%= f.label :phone, 'Telefone' %>
-    <%= f.text_field :phone %>
+  <div class="form-group">
+    <%= f.input :phone, label: 'Telefone' %>
   </div>
   <div>
     <%= f.submit submit_text %>
   </div>
 <% end %>
+</section>
