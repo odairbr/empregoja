@@ -2,12 +2,9 @@ require 'rails_helper'
 
 feature 'User edit company' do
   scenario 'successfully'do
-    company_1 = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
+    company = create :company
 
-     visit edit_company_path(company_1)
+     visit edit_company_path(company)
 
      fill_in 'Nome',      with: 'Code Campus'
      fill_in 'Local',     with: 'RJ'

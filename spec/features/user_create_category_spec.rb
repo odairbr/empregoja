@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User create category' do
   scenario 'successfuly' do
-    category = Category.new(name: 'estágio')
+    category = build :category
 
     visit new_category_path
 

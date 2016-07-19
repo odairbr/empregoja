@@ -2,10 +2,7 @@ require 'rails_helper'
 
 feature 'User create companies' do
   scenario 'successfully' do
-    company = Company.new(name: 'Campus Code',
-                          location: 'São Paulo',
-                          mail: 'contato@campus.com.br',
-                          phone: '2369-3476')
+    company = build(:company)
 
     visit new_company_path
 
@@ -22,11 +19,7 @@ feature 'User create companies' do
     expect(page).to have_content(company.phone)
   end
   scenario 'with valid data' do
-    company_1 = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
-
+    company_1 = build(:company)
      visit new_company_path(company_1)
 
      fill_in 'Nome',      with: ''
