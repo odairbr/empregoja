@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
 
+  include Devise::TestHelpers
+
   def new
     @company = Company.new
   end

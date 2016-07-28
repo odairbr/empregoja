@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :companies
   root 'home#index'
   resources :jobs, only:[:show, :new, :create, :edit, :update]
   resources :companies, only:[:new, :create, :show, :edit, :update]
